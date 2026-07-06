@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payam eslampour</title>
+    <link rel="shortcut icon" href="image.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./resources/css/home.css" />
+    <link rel="stylesheet" href="./resources/css/theme.css" />
+    <!-- برای آیکون‌ها از FontAwesome استفاده کن -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="./resources/js/theme.js"></script>
+    <style>
+      @import url("https://v1.fontapi.ir/css/Vazirmatn");
+
+      :root {
+        --bg-main: #121212;
+        --bg-card: #1e1e1e;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent: #5e5e5e;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        font-family: "Vazirmatn", sans-serif;
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .container {
+        display: flex;
+        gap: 30px;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      /* Sidebar Styling */
+      .sidebar {
+        background: var(--bg-card);
+        width: 300px;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .avatar img {
+        width: 80px;
+        border-radius: 20px;
+      }
+      .job-badge {
+        background: #333;
+        padding: 5px 15px;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 10px 0;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0;
+        text-align: right;
+      }
+      .contact-item i {
+        color: #ffbf00;
+        font-size: 20px;
+      }
+
+      /* Main Content Styling */
+      .main-content {
+        background: var(--bg-card);
+        flex: 1;
+        padding: 40px;
+        border-radius: 20px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+
+        border-radius: 20px;
+        background-color: #12121255;
+        padding: 15px 20px;
+      }
+
+      .navbar a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin-left: 20px;
+        transition: 0.3s;
+      }
+      .navbar a.active {
+        color: var(--text-primary);
+        border-bottom: 2px solid #ffbf00;
+      }
+
+      .divider {
+        width: 40px;
+        height: 4px;
+        background: #ffbf00;
+        margin: 10px 0 20px;
+        border-radius: 2px;
+      }
+
+      .about-section p {
+        font-size: 20px;
+        line-height: 35px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .service-card {
+        background: #252525;
+        padding-right: 25px;
+        padding-top: 25px;
+        border-radius: 15px;
+        transition: 0.3s;
+        margin-top: 25px;
+      }
+
+      .service-card i {
+        color: #ffbf00;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .services h2 {
+        margin-top: 40px !important;
+      }
+
+      /* =========================
+   TABLET (تا 992px)
+========================= */
+      @media screen and (max-width: 992px) {
+        body {
+          height: auto;
+          min-height: 100vh;
+          overflow-y: auto;
+          padding: 20px;
+          align-items: flex-start;
+        }
+
+        .container {
+          flex-direction: column;
+          height: auto;
+          max-width: 100%;
+        }
+
+        .sidebar {
+          width: auto;
+        }
+
+        .main-content {
+          width: auto;
+        }
+
+        .navbar nav {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .navbar a {
+          margin: 0;
+        }
+
+        .service-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about-section p {
+          font-size: 18px;
+          line-height: 32px;
+        }
+      }
+
+      /* =========================
+   MOBILE (تا 768px)
+========================= */
+      @media screen and (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        .container {
+          gap: 20px;
+        }
+
+        .sidebar {
+          padding: 20px;
+        }
+
+        .avatar img {
+          width: 70px;
+        }
+
+        .sidebar h2 {
+          font-size: 22px;
+        }
+
+        .main-content {
+          padding: 25px;
+        }
+
+        .navbar {
+          padding: 12px;
+        }
+
+        .navbar nav {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .navbar a {
+          font-size: 15px;
+          margin: 0;
+        }
+
+        .about-section h1 {
+          font-size: 28px;
+        }
+
+        .about-section p {
+          font-size: 16px;
+          line-height: 30px;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-card {
+          margin-top: 0;
+          padding: 20px;
+        }
+
+        .contact-item {
+          gap: 10px;
+        }
+
+        .contact-item p {
+          font-size: 14px;
+          word-break: break-word;
+        }
+      }
+
+      /* =========================
+   SMALL MOBILE (تا 480px)
+========================= */
+      @media screen and (max-width: 480px) {
+        body {
+          padding: 10px;
+        }
+
+        .sidebar {
+          padding: 15px;
+        }
+
+        .main-content {
+          padding: 18px;
+        }
+
+        .navbar {
+          border-radius: 15px;
+        }
+
+        .navbar nav {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar a {
+          width: 100%;
+          text-align: center;
+          padding: 8px 0;
+        }
+
+        .sidebar h2 {
+          font-size: 20px;
+        }
+
+        .job-badge {
+          font-size: 13px;
+        }
+
+        .about-section h1 {
+          font-size: 24px;
+        }
+
+        .about-section p {
+          font-size: 15px;
+          line-height: 28px;
+        }
+
+        .service-card h3 {
+          font-size: 18px;
+        }
+
+        .service-card p {
+          font-size: 14px;
+        }
+
+        /* ===== Theme Toggle Button ===== */
+        #theme-toggle-btn {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          color: var(--text-secondary);
+          font-size: 18px;
+          padding: 4px 8px;
+          border-radius: 8px;
+          transition:
+            color 0.3s,
+            background 0.3s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: auto; /* push to left in RTL nav */
+          flex-shrink: 0;
+        }
+        #theme-toggle-btn:hover {
+          color: #ffbf00;
+          background: rgba(255, 191, 0, 0.1);
+        }
+
+        /* Light theme overrides for navbar bg */
+        [data-theme="light"] .navbar {
+          background-color: var(--navbar-bg, #e0e0e088);
+        }
+        [data-theme="light"] .navbar a {
+          color: var(--text-secondary);
+        }
+        [data-theme="light"] .navbar a.active {
+          color: var(--text-primary);
+        }
+        [data-theme="light"] .job-badge {
+          background: #ddd;
+          color: #333;
+        }
+        [data-theme="light"] .service-card {
+          background: #f5f5f5;
+        }
+        [data-theme="light"] .skill-bar {
+          background: #ddd;
+        }
+
+        /* Make navbar nav flex so theme button aligns to the left */
+        .navbar nav {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <!-- ستون سمت راست: پروفایل -->
+      <aside class="sidebar">
+        <div class="avatar">
+          <img src="image.png" alt="Profile" />
+        </div>
+        <h2>پیام اسلام پور</h2>
+        <div class="job-badge">توسعه‌دهنده وب</div>
+        <hr />
+        <div class="contact-box">
+          <div class="contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <div>
+              <span>ایمیل</span>
+              <p>eslampour.pm.1387@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <div>
+              <span>تلفن</span>
+              <p>09024180789</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-regular fa-calendar-days"></i>
+            <div>
+              <span>تاریخ تولد</span>
+              <p>23 مرداد 1387</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <span>آدرس</span>
+              <p>ایران ، کرج</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- ستون سمت چپ: محتوا -->
+      <section class="main-content">
+        <header class="navbar">
+          <nav>
+            <a href="index.html" class="active">درباره من</a>
+            <a href="skills.html">مهارت ها</a>
+            <a href="project.html">نمونه کارها</a>
+            <a href="about.html">همکاری</a>
+            <button
+              id="theme-toggle-btn"
+              onclick="window.__themeToggle()"
+              title="تغییر تم"
+            >
+              <i class="fa-solid fa-sun"></i>
+            </button>
+          </nav>
+        </header>
+
+        <article class="about-section">
+          <h1>درباره من</h1>
+          <div class="divider"></div>
+          <p>
+            توسعه‌دهنده فرانت‌اند با تسلط بر Tailwind و اصول UI، متمرکز بر خلق
+            رابط‌های کاربری مدرن و استاندارد جهت ارتقای کیفیت تجربه کاربر در
+            محصولات دیجیتال.
+          </p>
+          <p>
+            در مسیر توسعه مستمر مهارت‌های فنی و زبانی، آماده پیاده‌سازی
+            راهکارهای خلاقانه در محیط‌های تیمی هستم؛ با رویکردی مهندسی‌محور، بر
+            بهینه‌سازی دقیق کدها و هماهنگی کامل جهت ارائه محصولی با کارایی
+            حداکثری تمرکز دارم.
+          </p>
+        </article>
+
+        <section class="services">
+          <div class="service-grid">
+            <div class="service-card">
+              <i class="fa-solid fa-code"></i>
+              <h3>توسعه وب</h3>
+              <p>توسعه با کیفیت وب‌ سایت‌ها در سطح حرفه‌ای.</p>
+            </div>
+            <div class="service-card">
+              <i class="fa-solid fa-pen-ruler"></i>
+              <h3>طراحی وب</h3>
+              <p>طراحی مدرن و با کیفیت در سطح حرفه‌ای.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      'use strict';
+
+
+
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+
+
+// sidebar variables
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+
+// sidebar toggle functionality for mobile
+sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+
+
+
+// testimonials variables
+const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
+
+// modal variable
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
+
+// modal toggle function
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// add click event to all modal items
+for (let i = 0; i < testimonialsItem.length; i++) {
+
+  testimonialsItem[i].addEventListener("click", function () {
+
+    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    testimonialsModalFunc();
+
+  });
+
+}
+
+// add click event to modal close button
+modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+overlay.addEventListener("click", testimonialsModalFunc);
+
+
+
+// custom select variables
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-selecct-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
+
+select.addEventListener("click", function () { elementToggleFunc(this); });
+
+// add event in all select items
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    if (selectedValue === "همه") selectedValue = "all";
+    else if (selectedValue === "طراحی وب") selectedValue = "web design";
+    else if (selectedValue === "اپلیکیشن") selectedValue = "applications";
+    else if (selectedValue === "توسعه وب") selectedValue = "web development";
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+
+  });
+}
+
+// filter variables
+const filterItems = document.querySelectorAll("[data-filter-item]");
+
+const filterFunc = function (selectedValue) {
+
+  for (let i = 0; i < filterItems.length; i++) {
+
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else if (selectedValue === filterItems[i].dataset.category) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+
+  }
+
+}
+
+// add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+
+  filterBtn[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    if (selectedValue === "همه") selectedValue = "all";
+    else if (selectedValue === "طراحی وب") selectedValue = "web design";
+    else if (selectedValue === "اپلیکیشن") selectedValue = "applications";
+    else if (selectedValue === "توسعه وب") selectedValue = "web development";
+    selectValue.innerText = this.innerText;
+    filterFunc(selectedValue);
+
+    lastClickedBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBtn = this;
+
+  });
+
+}
+
+
+
+// contact form variables
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+// add event to all form input field
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
+
+    // check form validation
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
+    } else {
+      formBtn.setAttribute("disabled", "");
+    }
+
+  });
+}
+
+
+
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// add event to all nav link
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.trim() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+
+  });
+}
+
+
+// Theme toggle logic
+(function () {
+  const STORAGE_KEY = 'resume-theme';
+
+  const themes = {
+    dark: {
+      '--bg-main': '#121212',
+      '--bg-card': '#1e1e1e',
+      '--text-primary': '#ffffff',
+      '--text-secondary': '#a0a0a0',
+      '--accent': '#5e5e5e',
+      '--navbar-bg': '#12121255',
+    },
+    light: {
+      '--bg-main': '#f0f0f0',
+      '--bg-card': '#ffffff',
+      '--text-primary': '#1a1a1a',
+      '--text-secondary': '#555555',
+      '--accent': '#cccccc',
+      '--navbar-bg': '#e0e0e088',
+    },
+  };
+
+  function applyTheme(name) {
+    const vars = themes[name];
+    const root = document.documentElement;
+    Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
+    document.documentElement.setAttribute('data-theme', name);
+    localStorage.setItem(STORAGE_KEY, name);
+
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) {
+      btn.innerHTML = name === 'dark'
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+      btn.title = name === 'dark' ? 'تم روشن' : 'تم تیره';
+    }
+  }
+
+  function toggle() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  }
+
+  window.__themeToggle = toggle;
+
+  // Apply saved theme before paint
+  const saved = localStorage.getItem(STORAGE_KEY) || 'dark';
+  applyTheme(saved);
+})();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سبد خرید | پاو پت</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🐾</span>
+      <span class="logo-text">پاو <em>پت</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="products.html">محصولات</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="contact.html">تماس</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="cart-btn active" id="cart-nav-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="منو">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="products.html">محصولات</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="contact.html">تماس</a></li>
+      <li><a href="cart.html">سبد خرید</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>سبد خرید</h1>
+    <p>محصولات انتخاب‌شده شما</p>
+  </div>
+</div>
+
+<section class="cart-page section">
+  <div class="container">
+    <div class="cart-layout" id="cart-layout">
+      <!-- JS renders here -->
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🐾</span>
+          <span class="logo-text">پاو <em>پت</em></span>
+        </a>
+        <p>پاو پت با بیش از ۱۰ سال تجربه در زمینه فروش محصولات حیوانات خانگی، بهترین انتخاب برای دوستان پشمالوی شماست.</p>
+        <div class="social-links">
+          <a href="#" aria-label="اینستاگرام">📸</a>
+          <a href="#" aria-label="تلگرام">✈️</a>
+          <a href="#" aria-label="واتساپ">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="products.html">محصولات</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>دسته‌بندی‌ها</h4>
+        <ul>
+          <li><a href="products.html?cat=dog">محصولات سگ</a></li>
+          <li><a href="products.html?cat=cat">محصولات گربه</a></li>
+          <li><a href="products.html?cat=bird">محصولات پرنده</a></li>
+          <li><a href="products.html?cat=fish">محصولات ماهی</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>اطلاعات تماس</h4>
+        <ul>
+          <li><span class="contact-icon">📍</span><span>تهران، خیابان ولیعصر، پلاک ۱۲۳، طبقه دوم</span></li>
+          <li><span class="contact-icon">📞</span><span><a href="tel:02112345678">۰۲۱-۱۲۳۴۵۶۷۸</a></span></li>
+          <li><span class="contact-icon">📱</span><span><a href="tel:09121234567">۰۹۱۲-۱۲۳-۴۵۶۷</a></span></li>
+          <li><span class="contact-icon">✉️</span><span><a href="mailto:info@pawpet.ir">info@pawpet.ir</a></span></li>
+          <li><span class="contact-icon">🕐</span><span>شنبه تا پنج‌شنبه: ۹ تا ۲۱</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ۱۴۰۳ پاو پت — تمامی حقوق محفوظ است</p>
+      <div class="footer-badges">
+        <span class="badge">نماد اعتماد</span>
+        <span class="badge">درگاه امن</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="scripts/cart-page.js"></script>
+</body>
+</html>

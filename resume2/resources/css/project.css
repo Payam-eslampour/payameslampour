@@ -1,0 +1,215 @@
+@import url("https://v1.fontapi.ir/css/Vazirmatn");
+
+:root {
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #5e5e5e;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Vazirmatn", sans-serif;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  min-height: 100vh;
+  height: auto;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  padding: 47px;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+
+  height: auto;
+}
+
+.main-content {
+  background: var(--bg-card);
+  flex: 1;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background-color: #12121255;
+  padding: 15px 20px;
+}
+.navbar a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.navbar a.active {
+  color: var(--text-primary);
+  border-bottom: 2px solid #ffbf00;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* دو ستون */
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.projects a {
+  list-style: none;
+  text-decoration: none;
+  color: yellow;
+}
+
+.card {
+  background: #2a2a2a;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 140px;        /* یا هر اندازه‌ای که می‌خوای */
+  border-radius: 10px;
+  overflow: hidden;     /* مهم: جلوگیری از بیرون‌زدن عکس */
+  background: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* تصویر رو تمیز crop می‌کنه */
+  display: block;
+}
+
+.card h3 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  .container {
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 30px;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .navbar a {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .card-img {
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .card-img {
+    height: 160px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 13px;
+  }
+
+  .projects {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card-img {
+    height: 140px;
+  }
+}

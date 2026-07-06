@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowTask — مدیریت هوشمند وظایف</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <div class="logo-icon">⚡</div>
+          <div>
+            <div class="logo-text">FlowTask</div>
+            <div class="logo-badge">PRO</div>
+          </div>
+        </div>
+
+        <!-- PROGRESS RING -->
+        <div class="progress-card">
+          <div class="ring-wrap">
+            <svg
+              class="ring-svg"
+              width="100"
+              height="100"
+              viewBox="0 0 100 100"
+            >
+              <defs>
+                <linearGradient
+                  id="ringGrad"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#6C63FF" />
+                  <stop offset="100%" stop-color="#A78BFA" />
+                </linearGradient>
+              </defs>
+              <circle class="ring-bg" cx="50" cy="50" r="45" />
+              <circle class="ring-fill" id="ring" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="ring-center">
+              <div class="ring-pct" id="ringPct">0%</div>
+              <div class="ring-label">کامل</div>
+            </div>
+          </div>
+          <div class="progress-stats">
+            <div class="stat">
+              <div class="stat-val done" id="doneCount">0</div>
+              <div class="stat-lbl">انجام‌شده</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val left" id="leftCount">0</div>
+              <div class="stat-lbl">باقی‌مانده</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORIES -->
+        <div>
+          <div class="section-title">دسته‌بندی‌ها</div>
+          <div class="cat-list" id="catList">
+            <div
+              class="cat-item active"
+              data-cat="all"
+              onclick="filterCat(this, 'all')"
+            >
+              <div class="cat-dot" style="background: #6c63ff"></div>
+              همه
+              <span class="cat-count" id="catAll">0</span>
+            </div>
+            <div
+              class="cat-item"
+              data-cat="کاری"
+              onclick="filterCat(this, 'کاری')"
+            >
+              <div class="cat-dot" style="background: #f87171"></div>
+              کاری
+              <span class="cat-count" id="catWork">0</span>
+            </div>
+            <div
+              class="cat-item"
+              data-cat="شخصی"
+              onclick="filterCat(this, 'شخصی')"
+            >
+              <div class="cat-dot" style="background: #34d399"></div>
+              شخصی
+              <span class="cat-count" id="catPersonal">0</span>
+            </div>
+            <div
+              class="cat-item"
+              data-cat="ایده"
+              onclick="filterCat(this, 'ایده')"
+            >
+              <div class="cat-dot" style="background: #fbbf24"></div>
+              ایده
+              <span class="cat-count" id="catIdea">0</span>
+            </div>
+            <div
+              class="cat-item"
+              data-cat="یادگیری"
+              onclick="filterCat(this, 'یادگیری')"
+            >
+              <div class="cat-dot" style="background: #a78bfa"></div>
+              یادگیری
+              <span class="cat-count" id="catLearn">0</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="focus-btn" onclick="openFocus()">
+          <span>🎯</span> حالت فوکوس
+        </button>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <div class="top-bar">
+          <div class="greeting">
+            <h1 id="greetText">سلام! 👋</h1>
+            <p id="greetSub">امروز چه وظایفی پیش رو داری؟</p>
+          </div>
+          <div class="date-chip" id="dateChip"></div>
+        </div>
+
+        <!-- INPUT -->
+        <div class="input-area">
+          <div class="input-row">
+            <input
+              class="task-input"
+              id="taskInput"
+              placeholder="وظیفه جدید اضافه کن..."
+              maxlength="200"
+              onkeydown="if (event.key === 'Enter') addTask();"
+            />
+            <button class="add-btn" onclick="addTask()">+</button>
+          </div>
+          <div class="meta-row">
+            <button class="meta-btn" id="priorityBtn" onclick="cyclePriority()">
+              <div
+                class="priority-dot"
+                id="pDot"
+                style="background: #555e73"
+              ></div>
+              <span id="pLabel">اولویت</span>
+            </button>
+            <button class="meta-btn" id="catBtn" onclick="cycleCat()">
+              🏷️ <span id="catLabel">دسته‌بندی</span>
+            </button>
+            <button class="meta-btn" id="dueBtn" onclick="openDue()">
+              📅 <span id="dueLabel">موعد</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters">
+          <button class="filter-btn active" onclick="setFilter(this, 'all')">
+            همه
+          </button>
+          <button class="filter-btn" onclick="setFilter(this, 'active')">
+            فعال
+          </button>
+          <button class="filter-btn" onclick="setFilter(this, 'done')">
+            انجام‌شده
+          </button>
+          <button class="filter-btn" onclick="setFilter(this, 'high')">
+            ⚡ فوری
+          </button>
+          <select class="sort-select" onchange="setSort(this.value)">
+            <option value="created">ترتیب: جدیدترین</option>
+            <option value="priority">ترتیب: اولویت</option>
+            <option value="due">ترتیب: موعد</option>
+            <option value="alpha">ترتیب: الفبا</option>
+          </select>
+        </div>
+
+        <!-- TASK LIST -->
+        <div class="tasks-wrap" id="taskList"></div>
+      </main>
+    </div>
+
+    <!-- FOCUS MODE -->
+    <div class="focus-overlay" id="focusOverlay">
+      <button class="focus-exit" onclick="closeFocus()">✕</button>
+      <div
+        style="
+          font-size: 13px;
+          color: var(--text3);
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        "
+      >
+        حالت فوکوس
+      </div>
+      <div class="focus-task" id="focusTask">هیچ وظیفه‌ای انتخاب نشده</div>
+      <div class="focus-timer" id="focusTimer">25:00</div>
+      <div class="focus-controls">
+        <button
+          class="focus-ctrl primary"
+          id="timerBtn"
+          onclick="toggleTimer()"
+        >
+          شروع
+        </button>
+        <button class="focus-ctrl" onclick="resetTimer()">بازنشانی</button>
+        <button class="focus-ctrl" onclick="closeFocus()">خروج</button>
+      </div>
+    </div>
+
+    <!-- DUE DATE MODAL -->
+    <div class="modal-bg" id="dueModal">
+      <div class="modal">
+        <h3>📅 انتخاب موعد</h3>
+        <input type="date" class="modal-input" id="dueInput" />
+        <div class="modal-btns">
+          <button class="modal-cancel" onclick="closeDue()">انصراف</button>
+          <button class="modal-save" onclick="saveDue()">ثبت</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">✓ <span id="toastMsg"></span></div>
+
+    <script>
+
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

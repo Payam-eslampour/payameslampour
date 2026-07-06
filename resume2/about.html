@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payam eslampour</title>
+    <link rel="shortcut icon" href="image.png" type="image/x-icon">
+    <link rel="stylesheet" href="./resources/css/about.css" />
+    <link rel="stylesheet" href="./resources/css/theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="./resources/js/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="main-content">
+        <header class="navbar">
+          <nav>
+            <a href="index.html">درباره من</a>
+            <a href="skills.html">مهارت ها</a>
+            <a href="project.html">نمونه کارها</a>
+            <a href="about.html" class="active">همکاری</a>
+            <button id="theme-toggle-btn" onclick="window.__themeToggle()" title="تغییر تم">
+              <i class="fa-solid fa-sun"></i>
+            </button>
+          </nav>
+        </header>
+        <p>ارتباط با من</p>
+<form class="my-form">
+
+  <div class="row">
+    <div class="input-group">
+      <input type="text" id="in1" placeholder=" " required />
+      <label for="in1">نام</label>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="in2" placeholder=" " required />
+      <label for="in2">نام خانوادگی</label>
+    </div>
+  </div>
+
+  <div class="input-group full-width">
+    <input type="text" id="in3" placeholder=" " required />
+    <label for="in3">موضوع پیام</label>
+  </div>
+
+  <div class="input-group full-width">
+    <textarea id="in4" placeholder=" " rows="4" required></textarea>
+    <label for="in4">متن پیام</label>
+  </div>
+
+  <button type="button" id="send-btn" class="submit-btn">ارسال پیام</button>
+
+  <!-- مودال -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <p>پیام شما با موفقیت ارسال شد!</p>
+      <button id="close-btn" type="button">تایید</button>
+    </div>
+  </div>
+
+</form>
+
+
+        </div>
+      </section>
+    </div>
+    <script>
+const sendBtn = document.getElementById('send-btn');
+const modal = document.getElementById('success-modal');
+const closeBtn = document.getElementById('close-btn');
+
+const inputs = document.querySelectorAll('input, textarea');
+
+function validateInputs() {
+  let isValid = true;
+
+  inputs.forEach(input => {
+    if (input.value.trim() === '') {
+      input.style.borderColor = 'red';
+      isValid = false;
+    } else {
+      input.style.borderColor = '#444';
+    }
+  });
+
+  return isValid;
+}
+
+// نمایش مودال با انیمیشن
+function showModal() {
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.style.opacity = '1';
+    modal.style.transform = 'scale(1)';
+  }, 10);
+}
+
+// بستن مودال با انیمیشن
+function hideModal() {
+  modal.style.opacity = '0';
+  modal.style.transform = 'scale(0.9)';
+
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 200);
+}
+
+sendBtn.addEventListener('click', () => {
+  if (validateInputs()) {
+    showModal();
+
+    inputs.forEach(input => input.value = '');
+  }
+});
+
+closeBtn.addEventListener('click', hideModal);
+
+
+    </script>
+  </body>
+</html>

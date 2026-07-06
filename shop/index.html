@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فروشگاه لوکس | خرید آنلاین</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon">✦</span>
+        <span class="logo__text">فروشگاه لوکس</span>
+      </a>
+
+      <nav class="nav" id="navMenu">
+        <a href="#home">صفحه اصلی</a>
+        <a href="#products">محصولات</a>
+        <a href="#categories">دسته‌بندی‌ها</a>
+        <a href="#offers">تخفیف‌ها</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="جستجو">
+          <span>⌕</span>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="سبد خرید">
+          <span>🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <a href="#" class="btn btn--ghost">ورود / ثبت‌نام</a>
+        <button class="hamburger" id="hamburger" aria-label="باز کردن منو">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <div class="hero__text">
+        <span class="badge">فروشگاه آنلاین لوکس و مدرن</span>
+        <h1>تجربه‌ای شیک برای خرید محصولات خاص و باکیفیت</h1>
+        <p>
+          بهترین محصولات روز را با طراحی حرفه‌ای، قیمت مناسب و تجربه خریدی سریع و مطمئن کشف کنید.
+        </p>
+        <div class="hero__buttons">
+          <a href="#products" class="btn btn--primary">مشاهده محصولات</a>
+          <a href="#offers" class="btn btn--outline">تخفیف‌های ویژه</a>
+        </div>
+      </div>
+
+      <div class="hero__image">
+        <img
+          src="img/image copy.png"
+          alt="بنر فروشگاه"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section__head">
+        <h2>دسته‌بندی محصولات</h2>
+        <p>انتخاب سریع از میان دسته‌های محبوب و پرفروش</p>
+      </div>
+
+      <div class="categories-grid">
+        <article class="category-card">
+          <img src="img/image copy 2.png" alt="پوشاک" />
+          <div>
+            <h3>پوشاک</h3>
+            <span>بیش از 240 محصول</span>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="img/image copy 3.png" alt="کیف و کفش" />
+          <div>
+            <h3>کیف و کفش</h3>
+            <span>بیش از 180 محصول</span>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="img/image copy 4.png" alt="لوازم دیجیتال" />
+          <div>
+            <h3>لوازم دیجیتال</h3>
+            <span>بیش از 320 محصول</span>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="img/image copy 5.png" alt="ساعت و اکسسوری" />
+          <div>
+            <h3>ساعت و اکسسوری</h3>
+            <span>بیش از 90 محصول</span>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="img/image copy 6.png" alt="لوازم خانه" />
+          <div>
+            <h3>لوازم خانه</h3>
+            <span>بیش از 160 محصول</span>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="img/image copy 7.png" alt="زیبایی و سلامت" />
+          <div>
+            <h3>زیبایی و سلامت</h3>
+            <span>بیش از 130 محصول</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section class="section section--alt" id="products">
+    <div class="container">
+      <div class="section__head">
+        <h2>محصولات پرفروش</h2>
+        <p>انتخاب‌های محبوب مشتریان با تخفیف ویژه و امتیاز بالا</p>
+      </div>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 8.png" alt="ساعت مچی مردانه" />
+            <span class="discount">-25%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>ساعت مچی مردانه</h3>
+            <div class="price">
+              <del>4,200,000 تومان</del>
+              <strong>3,150,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★★ <span>4.8</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 9.png" alt="هدفون بی‌سیم" />
+            <span class="discount">-18%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>هدفون بی‌سیم حرفه‌ای</h3>
+            <div class="price">
+              <del>6,000,000 تومان</del>
+              <strong>4,920,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★★ <span>4.7</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 10.png" alt="کفش اسپرت" />
+            <span class="discount">-30%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>کفش تراویس موکا</h3>
+            <div class="price">
+              <del>5,100,000 تومان</del>
+              <strong>3,570,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★☆ <span>4.5</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 11.png" alt="کیف دستی زنانه" />
+            <span class="discount">-20%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>کیف دستی زنانه </h3>
+            <div class="price">
+              <del>3,400,000 تومان</del>
+              <strong>2,720,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★★ <span>4.9</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 12.png" alt="دوربین حرفه‌ای" />
+            <span class="discount">-15%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>دوربین دیجیتال حرفه‌ای</h3>
+            <div class="price">
+              <del>28,000,000 تومان</del>
+              <strong>23,800,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★★ <span>4.8</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 13.png" alt="عطر لوکس" />
+            <span class="discount">-22%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>عطر لوکس مردانه</h3>
+            <div class="price">
+              <del>4,900,000 تومان</del>
+              <strong>3,822,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★☆ <span>4.6</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image.png" alt="اسپیکر بلوتوثی" />
+            <span class="discount">-28%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>اسپیکر بلوتوثی پرقدرت</h3>
+            <div class="price">
+              <del>5,600,000 تومان</del>
+              <strong>4,032,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★★ <span>4.7</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 14.png" alt="سرویس آشپزخانه" />
+            <span class="discount">-12%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>سرخ کن بدون روغن</h3>
+            <div class="price">
+              <del>7,000,000 تومان</del>
+              <strong>6,160,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★☆ <span>4.4</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 15.png" alt="لوازم آرایشی" />
+            <span class="discount">-35%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>پک لوازم آرایشی</h3>
+            <div class="price">
+              <del>2,800,000 تومان</del>
+              <strong>1,820,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★★ <span>4.9</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image">
+            <img src="img/image copy 16.png" alt="عینک آفتابی" />
+            <span class="discount">-17%</span>
+          </div>
+          <div class="product-card__body">
+            <h3>عینک آفتابی police</h3>
+            <div class="price">
+              <del>3,000,000 تومان</del>
+              <strong>2,490,000 تومان</strong>
+            </div>
+            <div class="rating">★★★★☆ <span>4.6</span></div>
+            <button class="btn btn--primary add-to-cart">افزودن به سبد خرید</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slider -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section__head">
+        <h2>محصولات ویژه</h2>
+      </div>
+
+      <div class="slider-wrap">
+        <button class="slider-btn prev" id="prevSlide">‹</button>
+
+        <div class="slider" id="productSlider">
+          <article class="slide-card">
+            <img src="img/image copy 17.png" alt="کفش زنانه" />
+            <h3>کفش زنانه </h3>
+            <p>ترکیب راحتی و طراحی لوکس</p>
+          </article>
+          <article class="slide-card">
+            <img src="img/image copy 18.png" alt="کیف چرم" />
+            <h3>کیف چرم دست‌دوز</h3>
+            <p>مناسب استایل روزمره و رسمی</p>
+          </article>
+          <article class="slide-card">
+            <img src="img/image copy 19.png" alt="کفش اسپرت" />
+            <h3>کتونی اسپرت </h3>
+            <p>ایده‌آل برای استفاده طولانی</p>
+          </article>
+          <article class="slide-card">
+            <img src="img/image copy 20.png" alt="ساعت لوکس" />
+            <h3>ساعت استیل لوکس</h3>
+            <p>جزئیات ظریف و کیفیت بالا</p>
+          </article>
+          <article class="slide-card">
+            <img src="img/image copy 21.png" alt="هدفون" />
+            <h3>هدفون استودیویی</h3>
+            <p>صدای شفاف و باس قدرتمند</p>
+          </article>
+        </div>
+
+        <button class="slider-btn next" id="nextSlide">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Banner -->
+  <section class="offer-banner" id="offers">
+    <div class="container offer-banner__inner">
+      <div class="offer-banner__text">
+        <span class="badge badge--light">فقط برای مدت محدود</span>
+        <h2>فروش ویژه تابستانه</h2>
+        <p>تا 60٪ تخفیف روی محصولات منتخب + ارسال سریع برای خریدهای امروز</p>
+
+        <div class="timer" id="countdown">
+          <div><span id="days">00</span><small>روز</small></div>
+          <div><span id="hours">00</span><small>ساعت</small></div>
+          <div><span id="minutes">00</span><small>دقیقه</small></div>
+          <div><span id="seconds">00</span><small>ثانیه</small></div>
+        </div>
+
+        <a href="#products" class="btn btn--primary">خرید فوری</a>
+      </div>
+
+      <div class="offer-banner__image">
+        <img src="img/image copy 23.png" alt="فروش ویژه" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>برندهای همکار</h2>
+        <p>نماد اعتماد و کیفیت از تأمین‌کنندگان معتبر</p>
+      </div>
+
+      <div class="brands-grid">
+        <div class="brand-card">AURORA</div>
+        <div class="brand-card">NOVA</div>
+        <div class="brand-card">LUMI</div>
+        <div class="brand-card">VELORA</div>
+        <div class="brand-card">MIRA</div>
+        <div class="brand-card">ELYS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head">
+        <h2>نظرات مشتریان</h2>
+        <p>بازخورد واقعی از تجربه خرید مشتریان</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="مشتری" />
+          <h3>مریم رضایی</h3>
+          <div class="rating">★★★★★</div>
+          <p>طراحی سایت خیلی شیک و روند خرید بسیار ساده بود. بسته‌بندی هم فوق‌العاده بود.</p>
+        </article>
+
+        <article class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="مشتری" />
+          <h3>علی محمدی</h3>
+          <div class="rating">★★★★☆</div>
+          <p>سرعت سایت عالیه و محصولات دقیقاً مطابق توضیحات بودند. تجربه خوبی داشتم.</p>
+        </article>
+
+        <article class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="مشتری" />
+          <h3>نگار حسینی</h3>
+          <div class="rating">★★★★★</div>
+          <p>ظاهر سایت خیلی حرفه‌ایه و پیدا کردن محصولات خیلی راحت انجام می‌شه.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>مقالات و اخبار فروشگاه</h2>
+        <p>محتوای آموزشی و اخبار جدید برای افزایش تعامل کاربران</p>
+      </div>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="img/1.png" alt="مقاله 1" />
+          <div class="article-card__body">
+            <span>12 فروردین 1405</span>
+            <h3>چطور بهترین محصول را برای خرید آنلاین انتخاب کنیم؟</h3>
+            <p>نکات مهم برای خرید هوشمندانه و سریع در فروشگاه‌های آنلاین.</p>
+            <a href="#" class="read-more">ادامه مطلب</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <img src="img/2.png" alt="مقاله 2" />
+          <div class="article-card__body">
+            <span>18 فروردین 1405</span>
+            <h3>ترندهای مد و استایل در سال جدید</h3>
+            <p>با انتخاب‌های جدید، ظاهر شخصی خود را حرفه‌ای‌تر کنید.</p>
+            <a href="#" class="read-more">ادامه مطلب</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <img src="img/3.png" alt="مقاله 3" />
+          <div class="article-card__body">
+            <span>22 فروردین 1405</span>
+            <h3>راهنمای خرید لوازم دیجیتال باکیفیت</h3>
+            <p>برای انتخاب بهتر هدفون، اسپیکر و گجت‌های کاربردی.</p>
+            <a href="#" class="read-more">ادامه مطلب</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <img src="img/4.png" alt="مقاله 4" />
+          <div class="article-card__body">
+            <span>27 فروردین 1405</span>
+            <h3>چگونه سبد خرید حرفه‌ای بسازیم؟</h3>
+            <p>تجربه خرید روان و افزایش نرخ تبدیل در فروشگاه‌های آنلاین.</p>
+            <a href="#" class="read-more">ادامه مطلب</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <img src="img/5.png" alt="مقاله 5" />
+          <div class="article-card__body">
+            <span>2 اردیبهشت 1405</span>
+            <h3>اکسسوری‌های لوکس؛ جزئیاتی که استایل را کامل می‌کند</h3>
+            <p>برای ساخت ظاهر متمایز با انتخاب اکسسوری مناسب.</p>
+            <a href="#" class="read-more">ادامه مطلب</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <img src="img/6.png" alt="مقاله 6" />
+          <div class="article-card__body">
+            <span>7 اردیبهشت 1405</span>
+            <h3>نکات مهم مراقبت از پوست و زیبایی</h3>
+            <p>مراقبت ساده ولی موثر برای سلامت و زیبایی روزانه.</p>
+            <a href="#" class="read-more">ادامه مطلب</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div>
+        <h3>درباره فروشگاه</h3>
+        <p>
+          فروشگاه لوکس مرجع خرید محصولات منتخب با طراحی مدرن، ارسال سریع و تجربه کاربری حرفه‌ای است.
+        </p>
+      </div>
+
+      <div>
+        <h3>لینک‌های مهم</h3>
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">محصولات</a></li>
+          <li><a href="#">قوانین و مقررات</a></li>
+          <li><a href="#">سوالات متداول</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>خدمات مشتریان</h3>
+        <ul>
+          <li><a href="#">پیگیری سفارش</a></li>
+          <li><a href="#">مرجوعی کالا</a></li>
+          <li><a href="#">پشتیبانی 24 ساعته</a></li>
+          <li><a href="#">راهنمای خرید</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>خبرنامه</h3>
+        <p>برای دریافت تخفیف‌ها و پیشنهادهای ویژه عضو شوید.</p>
+        <form class="newsletter">
+          <input type="email" placeholder="ایمیل شما" />
+          <button type="submit" class="btn btn--primary">عضویت</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 1405 فروشگاه لوکس. تمامی حقوق محفوظ است.</p>
+      <div class="socials">
+        <a href="#">اینستاگرام</a>
+        <a href="#">تلگرام</a>
+        <a href="#">ایکس</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav">
+    <a href="#home">خانه</a>
+    <a href="#products">محصولات</a>
+    <a href="#categories">دسته‌بندی</a>
+    <a href="#">باشگاه مشتریان</a>
+  </nav>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">به سبد خرید اضافه شد</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

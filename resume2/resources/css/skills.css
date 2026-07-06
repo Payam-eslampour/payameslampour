@@ -1,0 +1,328 @@
+@import url("https://v1.fontapi.ir/css/Vazirmatn");
+
+:root {
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #5e5e5e;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Vazirmatn", sans-serif;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+
+  /* ❌ حذف center عمودی */
+  align-items: flex-start;
+
+  min-height: 100vh;
+  height: auto;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+
+  height: auto;   /* ❌ حذف 100% */
+}
+
+.main-content {
+  background: var(--bg-card);
+  flex: 1;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background-color: #12121255;
+  padding: 15px 20px;
+}
+.navbar a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.navbar a.active {
+  color: var(--text-primary);
+  border-bottom: 2px solid #ffbf00;
+}
+
+.skills-section {
+  width: 100%;
+  padding: 60px 70px;
+  direction: ltr;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px 55px;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #333333;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.skill-fill-html {
+  width: 95%;
+  height: 100%;
+  background-color: #f5b400;
+  border-radius: 20px;
+}
+.skill-fill-css {
+  width: 95%;
+  height: 100%;
+  background-color: #f5b400;
+  border-radius: 20px;
+}
+.skill-fill-js {
+  width: 65%;
+  height: 100%;
+  background-color: #f5b400;
+  border-radius: 20px;
+}
+.skill-fill-t {
+  width: 0%;
+  height: 100%;
+  background-color: #f5b400;
+  border-radius: 20px;
+}
+.skill-fill-ui {
+  width: 0%;
+  height: 100%;
+  background-color: #f5b400;
+  border-radius: 20px;
+}
+.skill-fill-en {
+  width: 46%;
+  height: 100%;
+  background-color: #f5b400;
+  border-radius: 20px;
+}
+
+.timeline {
+  position: relative;
+  width: fit-content;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  bottom: 15px;
+  width: 2px;
+  background: #facc15;
+}
+
+.item {
+  position: relative;
+  padding-right: 25px;
+  margin-bottom: 20px;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #facc15;
+}
+
+.item span {
+  font-size: 20px;
+}
+
+/* =========================
+   TABLET (تا 992px)
+========================= */
+@media screen and (max-width: 992px) {
+
+  body{
+    padding:20px;
+    min-height:100vh;
+    height:auto;
+    overflow-y:auto;
+    overflow-x:hidden;
+    align-items:flex-start;
+  }
+
+  .container{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  .main-content{
+    padding:30px;
+  }
+
+  .skills-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+  }
+
+  .item span{
+    font-size:18px;
+    line-height:1.8;
+  }
+
+  .navbar nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .navbar a{
+    margin:0;
+  }
+}
+
+
+/* =========================
+   MOBILE (تا 768px)
+========================= */
+@media screen and (max-width: 768px) {
+
+  body{
+    padding:15px;
+  }
+
+  .main-content{
+    padding:20px;
+  }
+
+  .navbar{
+    padding:12px;
+    margin-bottom:25px;
+  }
+
+  .navbar nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+
+  .navbar a{
+    margin:0;
+    font-size:14px;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .skill-info{
+    font-size:15px;
+  }
+
+  .skill-bar{
+    height:8px;
+  }
+
+  .item{
+    padding-right:22px;
+  }
+
+  .item span{
+    font-size:16px;
+    line-height:1.9;
+  }
+
+  .timeline{
+    width:100%;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (تا 480px)
+========================= */
+@media screen and (max-width: 480px) {
+
+  body{
+    padding:10px;
+  }
+
+  .main-content{
+    padding:15px;
+    border-radius:15px;
+  }
+
+  .navbar{
+    border-radius:15px;
+  }
+
+  .navbar nav{
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+
+  .navbar a{
+    width:100%;
+    text-align:center;
+    padding:6px 0;
+    font-size:13px;
+  }
+
+  .item span{
+    font-size:14px;
+    line-height:2;
+  }
+
+  .skill-info{
+    font-size:14px;
+  }
+
+  .timeline::before{
+    right:3px;
+  }
+
+  .item::before{
+    width:8px;
+    height:8px;
+  }
+}

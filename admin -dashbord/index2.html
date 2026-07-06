@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نووا - پنل مدیریت</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+        <span class="logo-text">نووا</span>
+      </div>
+
+      <ul class="menu">
+        <li class="menu-section-title">منوی اصلی</li>
+        <li class="active" data-page="dashboard">
+          <a href="#"
+            ><i class="fa-solid fa-house"></i
+            ><span class="menu-label">داشبورد</span></a
+          >
+        </li>
+        <li data-page="analytics">
+          <a href="#"
+            ><i class="fa-solid fa-chart-line"></i
+            ><span class="menu-label">آمار و گزارش</span></a
+          >
+        </li>
+        <li data-page="orders">
+          <a href="#"
+            ><i class="fa-solid fa-cart-shopping"></i
+            ><span class="menu-label">سفارش‌ها</span
+            ><span class="badge">۵</span></a
+          >
+        </li>
+        <li data-page="users">
+          <a href="#"
+            ><i class="fa-solid fa-users"></i
+            ><span class="menu-label">کاربران</span></a
+          >
+        </li>
+
+        <li class="menu-section-title">مدیریت</li>
+        <li data-page="products">
+          <a href="#"
+            ><i class="fa-solid fa-box"></i
+            ><span class="menu-label">محصولات</span></a
+          >
+        </li>
+        <li data-page="messages">
+          <a href="#"
+            ><i class="fa-solid fa-envelope"></i
+            ><span class="menu-label">پیام‌ها</span
+            ><span class="badge">۳</span></a
+          >
+        </li>
+        <li data-page="settings">
+          <a href="#"
+            ><i class="fa-solid fa-gear"></i
+            ><span class="menu-label">تنظیمات</span></a
+          >
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div
+          class="user-info"
+          onclick="showToast('info', 'پروفایل در حال توسعه است')"
+        >
+          <img src="image.png" alt="کاربر" class="user-avatar" />
+          <div>
+            <div class="user-name">پیام اسلامپور</div>
+            <div class="user-role">مدیر ارشد</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" id="main-content">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="toggle-sidebar" title="باز/بسته کردن منو">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="search-box">
+            <i
+              class="fa-solid fa-magnifying-glass"
+              style="color: var(--muted)"
+            ></i>
+            <input type="text" id="global-search" placeholder="جستجو..." />
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div style="position: relative">
+            <button class="icon-btn" id="notif-btn" title="اعلان‌ها">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-dot"></span>
+            </button>
+            <div class="notif-panel" id="notif-panel">
+              <div class="notif-head">
+                <h4>اعلان‌ها</h4>
+                <button class="btn-sm" onclick="markAllRead()">
+                  خواندن همه
+                </button>
+              </div>
+              <div class="notif-item unread" onclick="markRead(this)">
+                <div class="notif-dot-indicator"></div>
+                <div class="notif-body">
+                  <p>سفارش جدید از علی احمدی ثبت شد</p>
+                  <span>۵ دقیقه پیش</span>
+                </div>
+              </div>
+              <div class="notif-item unread" onclick="markRead(this)">
+                <div class="notif-dot-indicator"></div>
+                <div class="notif-body">
+                  <p>پرداخت موفق — ۲,۴۰۰,۰۰۰ تومان</p>
+                  <span>۲۰ دقیقه پیش</span>
+                </div>
+              </div>
+              <div class="notif-item unread" onclick="markRead(this)">
+                <div class="notif-dot-indicator"></div>
+                <div class="notif-body">
+                  <p>کاربر جدید ثبت‌نام کرد</p>
+                  <span>۱ ساعت پیش</span>
+                </div>
+              </div>
+              <div class="notif-item" onclick="markRead(this)">
+                <div class="notif-body" style="padding-right: 20px">
+                  <p>گزارش هفتگی آماده است</p>
+                  <span>دیروز</span>
+                </div>
+              </div>
+              <div class="notif-footer">
+                <a onclick="showToast('info', 'صفحه اعلان‌ها')"
+                  >مشاهده همه اعلان‌ها</a
+                >
+              </div>
+            </div>
+          </div>
+          <button class="icon-btn" id="theme-btn" title="تغییر تم">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <div
+            class="profile-btn"
+            onclick="showToast('info', 'پروفایل باز شد')"
+          >
+            <img src="image.png" alt="profile" />
+            <span>پیام اسلامپور</span>
+            <i
+              class="fa-solid fa-chevron-down"
+              style="font-size: 11px; color: var(--muted)"
+            ></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================== DASHBOARD PAGE ==================== -->
+      <div class="page active" id="page-dashboard">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>داشبورد</span>
+          </div>
+          <h1>خوش آمدید، پیام 👋</h1>
+          <p>آخرین وضعیت کسب‌وکار شما در یک نگاه</p>
+        </div>
+
+        <!-- STAT CARDS -->
+        <div class="cards">
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon blue">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+              <span class="card-trend up">↑ ۱۲٪</span>
+            </div>
+            <div>
+              <h3>۱۲,۴۵۰,۰۰۰</h3>
+              <p>درآمد کل (تومان)</p>
+            </div>
+            <div class="card-bar">
+              <div
+                class="card-bar-fill"
+                style="width: 72%; background: #3b82f6"
+              ></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon green">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <span class="card-trend up">↑ ۸٪</span>
+            </div>
+            <div>
+              <h3>۱,۲۴۰</h3>
+              <p>تعداد کاربران</p>
+            </div>
+            <div class="card-bar">
+              <div
+                class="card-bar-fill"
+                style="width: 60%; background: #22c55e"
+              ></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon yellow">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <span class="card-trend down">↓ ۳٪</span>
+            </div>
+            <div>
+              <h3>۳۲۰</h3>
+              <p>سفارش‌های این ماه</p>
+            </div>
+            <div class="card-bar">
+              <div
+                class="card-bar-fill"
+                style="width: 45%; background: #f59e0b"
+              ></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon purple">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <span class="card-trend up">↑ ۵٪</span>
+            </div>
+            <div>
+              <h3>۸۴٪</h3>
+              <p>نرخ رشد</p>
+            </div>
+            <div class="card-bar">
+              <div
+                class="card-bar-fill"
+                style="width: 84%; background: #a855f7"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHART + DONUT -->
+        <div class="grid-2">
+          <div class="section-box">
+            <div class="section-head">
+              <h2>نمودار درآمد</h2>
+              <div style="display: flex; gap: 6px">
+                <button
+                  class="btn-sm active"
+                  onclick="setChartPeriod('week', this)"
+                >
+                  هفته
+                </button>
+                <button class="btn-sm" onclick="setChartPeriod('month', this)">
+                  ماه
+                </button>
+                <button class="btn-sm" onclick="setChartPeriod('year', this)">
+                  سال
+                </button>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+          <div class="section-box">
+            <div class="section-head"><h2>توزیع فروش</h2></div>
+            <div class="donut-wrap">
+              <div class="donut-svg-wrap">
+                <svg
+                  id="donutSvg"
+                  viewBox="0 0 160 160"
+                  width="160"
+                  height="160"
+                ></svg>
+                <div class="donut-center">
+                  <div class="big">۷۶٪</div>
+                  <div class="small">موفق</div>
+                </div>
+              </div>
+              <div class="donut-legend">
+                <div class="legend-item">
+                  <span class="legend-label"
+                    ><span class="legend-dot" style="background: #3b82f6"></span
+                    >لپ‌تاپ</span
+                  ><span class="legend-val">۴۲٪</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-label"
+                    ><span class="legend-dot" style="background: #22c55e"></span
+                    >موبایل</span
+                  ><span class="legend-val">۲۸٪</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-label"
+                    ><span class="legend-dot" style="background: #f59e0b"></span
+                    >لوازم جانبی</span
+                  ><span class="legend-val">۱۸٪</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-label"
+                    ><span class="legend-dot" style="background: #a855f7"></span
+                    >سایر</span
+                  ><span class="legend-val">۱۲٪</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORDERS TABLE -->
+        <div class="table-section">
+          <div class="section-head">
+            <h2>آخرین سفارش‌ها</h2>
+            <div class="table-controls">
+              <div class="table-search">
+                <i
+                  class="fa-solid fa-magnifying-glass"
+                  style="color: var(--muted); font-size: 12px"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="جستجوی سفارش..."
+                  id="order-search"
+                  oninput="filterOrders()"
+                />
+              </div>
+              <select
+                class="filter-select"
+                onchange="filterOrders()"
+                id="status-filter"
+              >
+                <option value="">همه وضعیت‌ها</option>
+                <option value="completed">تکمیل شده</option>
+                <option value="pending">در انتظار</option>
+                <option value="processing">در حال پردازش</option>
+                <option value="cancelled">لغو شده</option>
+              </select>
+              <button class="btn-primary" onclick="openModal('add-order')">
+                <i class="fa-solid fa-plus"></i> سفارش جدید
+              </button>
+            </div>
+          </div>
+          <table id="orders-table">
+            <thead>
+              <tr>
+                <th>محصول</th>
+                <th>مشتری</th>
+                <th>وضعیت</th>
+                <th>مبلغ</th>
+                <th>تاریخ</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody id="orders-tbody"></tbody>
+          </table>
+          <div class="pagination">
+            <span class="pagination-info" id="pagination-info"></span>
+            <div class="pagination-btns">
+              <button class="page-btn" onclick="changePage(-1)">
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
+              <button class="page-btn active" id="page-num">۱</button>
+              <button class="page-btn" onclick="changePage(1)">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM GRID -->
+        <div class="grid-3">
+          <!-- Activity -->
+          <div class="section-box">
+            <div class="section-head">
+              <h2>فعالیت‌های اخیر</h2>
+              <button
+                class="btn-sm"
+                onclick="showToast('info', 'بارگذاری بیشتر...')"
+              >
+                بیشتر
+              </button>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon blue">
+                <i class="fa-solid fa-user-plus"></i>
+              </div>
+              <div>
+                <div class="activity-text">
+                  کاربر جدید: <b>مریم موسوی</b> ثبت‌نام کرد
+                </div>
+                <div class="activity-time">۵ دقیقه پیش</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon green">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <div class="activity-text">سفارش #۱۰۵۶ تکمیل شد</div>
+                <div class="activity-time">۲۲ دقیقه پیش</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon yellow">
+                <i class="fa-solid fa-truck"></i>
+              </div>
+              <div>
+                <div class="activity-text">ارسال محصول به <b>رضا کریمی</b></div>
+                <div class="activity-time">۱ ساعت پیش</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div
+                class="activity-icon red"
+                style="background: rgba(239, 68, 68, 0.15); color: #ef4444"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <div>
+                <div class="activity-text">سفارش #۱۰۵۴ لغو شد</div>
+                <div class="activity-time">۲ ساعت پیش</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div
+                class="activity-icon purple"
+                style="background: rgba(168, 85, 247, 0.15); color: #a855f7"
+              >
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>
+                <div class="activity-text">نظر جدید ۵ ستاره ثبت شد</div>
+                <div class="activity-time">دیروز</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Products -->
+          <div class="section-box">
+            <div class="section-head"><h2>پرفروش‌ترین‌ها</h2></div>
+            <div class="product-row">
+              <span class="product-rank">۱</span>
+              <div class="product-info">
+                <div class="name">مک‌بوک پرو M3</div>
+                <div class="sales">۴۸ فروش</div>
+              </div>
+              <span class="product-price">۸۵,۰۰۰,۰۰۰</span>
+            </div>
+            <div class="product-row">
+              <span class="product-rank">۲</span>
+              <div class="product-info">
+                <div class="name">آیفون ۱۵ پرو</div>
+                <div class="sales">۳۶ فروش</div>
+              </div>
+              <span class="product-price">۶۲,۰۰۰,۰۰۰</span>
+            </div>
+            <div class="product-row">
+              <span class="product-rank">۳</span>
+              <div class="product-info">
+                <div class="name">ایرپادز پرو ۲</div>
+                <div class="sales">۲۹ فروش</div>
+              </div>
+              <span class="product-price">۱۲,۰۰۰,۰۰۰</span>
+            </div>
+            <div class="product-row">
+              <span class="product-rank">۴</span>
+              <div class="product-info">
+                <div class="name">اپل واچ سری ۹</div>
+                <div class="sales">۲۴ فروش</div>
+              </div>
+              <span class="product-price">۱۸,۰۰۰,۰۰۰</span>
+            </div>
+            <div class="product-row">
+              <span class="product-rank">۵</span>
+              <div class="product-info">
+                <div class="name">آیپد پرو ۱۲.۹</div>
+                <div class="sales">۱۸ فروش</div>
+              </div>
+              <span class="product-price">۴۲,۰۰۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <!-- Tasks -->
+          <div class="section-box">
+            <div class="section-head">
+              <h2>وظایف امروز</h2>
+              <button
+                class="btn-primary"
+                style="font-size: 12px; padding: 6px 12px"
+                onclick="addTask()"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div id="task-list">
+              <div class="task-item">
+                <div class="task-check" onclick="toggleTask(this)"></div>
+                <span class="task-text">بررسی سفارش‌های جدید</span
+                ><span class="task-priority high">فوری</span>
+              </div>
+              <div class="task-item">
+                <div class="task-check" onclick="toggleTask(this)"></div>
+                <span class="task-text">پاسخ به پیام‌های کاربران</span
+                ><span class="task-priority high">فوری</span>
+              </div>
+              <div class="task-item">
+                <div class="task-check done" onclick="toggleTask(this)">
+                  <i class="fa-solid fa-check" style="font-size: 10px"></i>
+                </div>
+                <span class="task-text done">آپدیت موجودی انبار</span
+                ><span class="task-priority mid">متوسط</span>
+              </div>
+              <div class="task-item">
+                <div class="task-check" onclick="toggleTask(this)"></div>
+                <span class="task-text">تهیه گزارش هفتگی</span
+                ><span class="task-priority mid">متوسط</span>
+              </div>
+              <div class="task-item">
+                <div class="task-check done" onclick="toggleTask(this)">
+                  <i class="fa-solid fa-check" style="font-size: 10px"></i>
+                </div>
+                <span class="task-text done">جلسه با تیم فروش</span
+                ><span class="task-priority low">عادی</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== ANALYTICS PAGE ==================== -->
+      <div class="page" id="page-analytics">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>آمار و گزارش</span>
+          </div>
+          <h1>آمار و تحلیل</h1>
+          <p>داده‌های جامع عملکرد کسب‌وکار</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon blue"><i class="fa-solid fa-eye"></i></div>
+              <span class="card-trend up">↑ ۲۳٪</span>
+            </div>
+            <div>
+              <h3>۴۵,۶۰۰</h3>
+              <p>بازدید ماه</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon green">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+              <span class="card-trend up">↑ ۵٪</span>
+            </div>
+            <div>
+              <h3>۳.۲٪</h3>
+              <p>نرخ تبدیل</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon yellow">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <span class="card-trend up">↑ ۱۱٪</span>
+            </div>
+            <div>
+              <h3>۴:۳۲</h3>
+              <p>میانگین زمان حضور</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon purple">
+                <i class="fa-solid fa-repeat"></i>
+              </div>
+              <span class="card-trend down">↓ ۲٪</span>
+            </div>
+            <div>
+              <h3>۳۱٪</h3>
+              <p>نرخ بازگشت</p>
+            </div>
+          </div>
+        </div>
+        <div class="analytics-grid">
+          <div class="section-box">
+            <div class="section-head"><h2>منابع ترافیک</h2></div>
+            <div class="stat-row">
+              <span>جستجوی ارگانیک</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 65%; background: #3b82f6"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۶۵٪</span>
+            </div>
+            <div class="stat-row">
+              <span>شبکه‌های اجتماعی</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 22%; background: #a855f7"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۲۲٪</span>
+            </div>
+            <div class="stat-row">
+              <span>ایمیل مارکتینگ</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 8%; background: #f59e0b"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۸٪</span>
+            </div>
+            <div class="stat-row">
+              <span>مستقیم</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 5%; background: #22c55e"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۵٪</span>
+            </div>
+          </div>
+          <div class="section-box">
+            <div class="section-head"><h2>بهترین صفحات</h2></div>
+            <div class="stat-row">
+              <span>/فروشگاه</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 80%; background: #3b82f6"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۱۲,۴۰۰</span>
+            </div>
+            <div class="stat-row">
+              <span>/محصولات/لپ‌تاپ</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 55%; background: #22c55e"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۸,۱۰۰</span>
+            </div>
+            <div class="stat-row">
+              <span>/تماس با ما</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 30%; background: #f59e0b"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۴,۵۰۰</span>
+            </div>
+            <div class="stat-row">
+              <span>/درباره ما</span>
+              <div class="stat-bar">
+                <div
+                  class="stat-bar-fill"
+                  style="width: 18%; background: #a855f7"
+                ></div>
+              </div>
+              <span style="font-weight: 600">۲,۷۰۰</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-box">
+          <div class="section-head"><h2>نمودار بازدید هفتگی</h2></div>
+          <div class="chart-wrap"><canvas id="analyticsChart"></canvas></div>
+        </div>
+      </div>
+
+      <!-- ==================== ORDERS PAGE ==================== -->
+      <div class="page" id="page-orders">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>سفارش‌ها</span>
+          </div>
+          <h1>مدیریت سفارش‌ها</h1>
+          <p>مشاهده و مدیریت تمام سفارش‌های مشتریان</p>
+        </div>
+        <div class="table-section">
+          <div class="section-head">
+            <h2>همه سفارش‌ها</h2>
+            <button class="btn-primary" onclick="openModal('add-order')">
+              <i class="fa-solid fa-plus"></i> سفارش جدید
+            </button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>شناسه</th>
+                <th>محصول</th>
+                <th>مشتری</th>
+                <th>وضعیت</th>
+                <th>مبلغ</th>
+                <th>تاریخ</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody id="all-orders-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==================== USERS PAGE ==================== -->
+      <div class="page" id="page-users">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>کاربران</span>
+          </div>
+          <h1>مدیریت کاربران</h1>
+          <p>مشاهده و ویرایش اطلاعات کاربران</p>
+        </div>
+        <div class="table-section">
+          <div class="section-head">
+            <h2>لیست کاربران</h2>
+            <button class="btn-primary" onclick="openModal('add-user')">
+              <i class="fa-solid fa-user-plus"></i> کاربر جدید
+            </button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>کاربر</th>
+                <th>نقش</th>
+                <th>وضعیت</th>
+                <th>تاریخ عضویت</th>
+                <th>سفارش‌ها</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody id="users-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==================== PRODUCTS PAGE ==================== -->
+      <div class="page" id="page-products">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>محصولات</span>
+          </div>
+          <h1>مدیریت محصولات</h1>
+        </div>
+        <div class="table-section">
+          <div class="section-head">
+            <h2>لیست محصولات</h2>
+            <button class="btn-primary" onclick="openModal('add-product')">
+              <i class="fa-solid fa-plus"></i> محصول جدید
+            </button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>محصول</th>
+                <th>دسته‌بندی</th>
+                <th>قیمت</th>
+                <th>موجودی</th>
+                <th>وضعیت</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody id="products-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==================== MESSAGES PAGE ==================== -->
+      <div class="page" id="page-messages">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>پیام‌ها</span>
+          </div>
+          <h1>پیام‌های دریافتی</h1>
+        </div>
+        <div class="table-section">
+          <div class="section-head"><h2>صندوق پیام</h2></div>
+          <div id="messages-list"></div>
+        </div>
+      </div>
+
+      <!-- ==================== SETTINGS PAGE ==================== -->
+      <div class="page" id="page-settings">
+        <div class="page-header">
+          <div class="breadcrumb">
+            <span>خانه</span>
+            <i class="fa-solid fa-angle-left" style="font-size: 10px"></i>
+            <span>تنظیمات</span>
+          </div>
+          <h1>تنظیمات</h1>
+          <p>پیکربندی پنل مدیریت</p>
+        </div>
+        <div class="settings-grid">
+          <div class="section-box">
+            <h2 style="font-size: 15px; margin-bottom: 16px">
+              اطلاعات حساب کاربری
+            </h2>
+            <div class="form-group">
+              <label>نام و نام خانوادگی</label
+              ><input type="text" value="پیام اسلامپور" />
+            </div>
+            <div class="form-group">
+              <label>آدرس ایمیل</label
+              ><input type="email" value="ali@nova.ir" />
+            </div>
+            <div class="form-group">
+              <label>شماره تماس</label
+              ><input type="text" value="۰۹۱۲-۳۴۵-۶۷۸۹" />
+            </div>
+            <div class="form-group">
+              <label>نقش</label
+              ><select>
+                <option>مدیر ارشد</option>
+                <option>مدیر فروش</option>
+                <option>ادمین</option>
+              </select>
+            </div>
+            <button
+              class="btn-primary"
+              onclick="showToast('success', 'اطلاعات با موفقیت ذخیره شد')"
+            >
+              ذخیره تغییرات
+            </button>
+          </div>
+          <div class="section-box">
+            <h2 style="font-size: 15px; margin-bottom: 16px">
+              تنظیمات اعلان‌ها
+            </h2>
+            <div class="toggle-row">
+              <span>ایمیل سفارش جدید</span>
+              <div
+                class="toggle on"
+                onclick="this.classList.toggle('on')"
+              ></div>
+            </div>
+            <div class="toggle-row">
+              <span>پیامک پرداخت</span>
+              <div
+                class="toggle on"
+                onclick="this.classList.toggle('on')"
+              ></div>
+            </div>
+            <div class="toggle-row">
+              <span>اعلان مرورگر</span>
+              <div class="toggle" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="toggle-row">
+              <span>گزارش هفتگی</span>
+              <div
+                class="toggle on"
+                onclick="this.classList.toggle('on')"
+              ></div>
+            </div>
+            <div class="toggle-row">
+              <span>هشدار موجودی</span>
+              <div class="toggle" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <h2 style="font-size: 15px; margin: 20px 0 16px">ظاهر</h2>
+            <div class="toggle-row">
+              <span>حالت تاریک</span>
+              <div
+                class="toggle"
+                id="dark-toggle"
+                onclick="toggleDarkMode()"
+              ></div>
+            </div>
+          </div>
+          <div class="section-box">
+            <h2 style="font-size: 15px; margin-bottom: 16px">تغییر رمز عبور</h2>
+            <div class="form-group">
+              <label>رمز عبور فعلی</label
+              ><input type="password" placeholder="••••••••" />
+            </div>
+            <div class="form-group">
+              <label>رمز عبور جدید</label
+              ><input type="password" placeholder="••••••••" />
+            </div>
+            <div class="form-group">
+              <label>تکرار رمز عبور جدید</label
+              ><input type="password" placeholder="••••••••" />
+            </div>
+            <button
+              class="btn-primary"
+              onclick="showToast('success', 'رمز عبور تغییر کرد')"
+            >
+              تغییر رمز
+            </button>
+          </div>
+          <div class="section-box">
+            <h2 style="font-size: 15px; margin-bottom: 16px">
+              اطلاعات کسب‌وکار
+            </h2>
+            <div class="form-group">
+              <label>نام فروشگاه</label><input type="text" value="نووا شاپ" />
+            </div>
+            <div class="form-group">
+              <label>آدرس سایت</label><input type="text" value="nova-shop.ir" />
+            </div>
+            <div class="form-group">
+              <label>ارز پیش‌فرض</label
+              ><select>
+                <option>تومان (IRT)</option>
+                <option>دلار (USD)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>توضیحات</label
+              ><textarea>فروشگاه آنلاین تخصصی محصولات اپل</textarea>
+            </div>
+            <button
+              class="btn-primary"
+              onclick="showToast('success', 'تنظیمات ذخیره شد')"
+            >
+              ذخیره
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== MODAL ===== -->
+    <div
+      class="modal-overlay"
+      id="modal-overlay"
+      onclick="closeModalOverlay(event)"
+    >
+      <div class="modal" id="modal-box">
+        <div class="modal-head">
+          <h3 id="modal-title">عنوان</h3>
+          <button class="modal-close" onclick="closeModal()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پاو پت | پت‌شاپ لوکس</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🐾</span>
+      <span class="logo-text">پاو <em>پت</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">خانه</a></li>
+      <li><a href="products.html">محصولات</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="contact.html">تماس</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="cart-btn" id="cart-nav-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="منو">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="products.html">محصولات</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="contact.html">تماس</a></li>
+      <li><a href="cart.html">سبد خرید</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      زندگی<br/>
+      <em>لوکس‌تر</em><br/>
+      برای حیوانات خانگی
+    </h1>
+    <p class="hero-subtitle">محصولات ویژه، غذای مراقبتی و لوازم جانبی منحصربه‌فرد برای سگ و گربه‌های عزیزتان</p>
+    <div class="hero-cta">
+      <a href="products.html" class="btn btn-primary">مشاهده محصولات</a>
+      <a href="about.html" class="btn btn-outline">بیشتر بدانید</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>۲۰۰+</strong><span>محصول ویژه</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>۵۰۰۰+</strong><span>مشتری راضی</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>۱۰+</strong><span>سال تجربه</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card hero-card-1">
+      <div class="card-emoji">🐕</div>
+      <div class="card-label">غذای سگ</div>
+    </div>
+    <div class="hero-card hero-card-2">
+      <div class="card-emoji">🐈</div>
+      <div class="card-label">لوازم گربه</div>
+    </div>
+    <div class="hero-card hero-card-3">
+      <div class="card-emoji">🦜</div>
+      <div class="card-label">پرندگان</div>
+    </div>
+    <div class="hero-main-visual">
+      <div class="big-paw">🐾</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>اسکرول کنید</span>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">دسته‌بندی‌ها</span>
+      <h2>برای هر حیوان‌خانگی</h2>
+      <p>از سگ تا گربه، از پرنده تا ماهی — همه چیز در یک جا</p>
+    </div>
+    <div class="categories-grid">
+      <a href="products.html?cat=dog" class="category-card cat-dog">
+        <div class="cat-icon">🐕</div>
+        <h3>سگ</h3>
+        <p>غذا، لیش، لباس و بازی</p>
+        <span class="cat-count">۸۵ محصول</span>
+      </a>
+      <a href="products.html?cat=cat" class="category-card cat-cat">
+        <div class="cat-icon">🐈</div>
+        <h3>گربه</h3>
+        <p>بستر، اسباب‌بازی و خوراک</p>
+        <span class="cat-count">۷۲ محصول</span>
+      </a>
+      <a href="products.html?cat=bird" class="category-card cat-bird">
+        <div class="cat-icon">🦜</div>
+        <h3>پرنده</h3>
+        <p>قفس، دانه و ویتامین</p>
+        <span class="cat-count">۴۳ محصول</span>
+      </a>
+      <a href="products.html?cat=fish" class="category-card cat-fish">
+        <div class="cat-icon">🐟</div>
+        <h3>ماهی</h3>
+        <p>آکواریوم، فیلتر و غذا</p>
+        <span class="cat-count">۳۱ محصول</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="featured section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">پرفروش‌ترین‌ها</span>
+      <h2>محصولات برگزیده</h2>
+      <p>با کیفیت‌ترین محصولات که مشتریان ما دوست دارند</p>
+    </div>
+    <div class="products-grid" id="featured-products"></div>
+    <div class="section-footer">
+      <a href="products.html" class="btn btn-outline-dark">مشاهده همه محصولات</a>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="promo-banner">
+  <div class="container">
+    <div class="banner-content">
+      <div class="banner-text">
+        <span class="banner-tag">پیشنهاد ویژه</span>
+        <h2>اولین خریدت؟<br/><em>۱۰٪ تخفیف</em> برات داریم!</h2>
+        <p>با ثبت‌نام در خبرنامه ما، کد تخفیف اختصاصی دریافت کنید</p>
+        <div class="banner-form">
+          <input type="email" placeholder="ایمیل خود را وارد کنید" />
+          <button class="btn btn-primary">دریافت کد تخفیف</button>
+        </div>
+      </div>
+      <div class="banner-visual">
+        <div class="banner-emoji">🎁</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">چرا پاو پت؟</span>
+      <h2>تفاوت ما در جزئیات است</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🚚</div>
+        <h3>ارسال رایگان</h3>
+        <p>برای خریدهای بالای ۵۰۰ هزار تومان ارسال کاملاً رایگان است</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <h3>کیفیت تضمین‌شده</h3>
+        <p>تمام محصولات ما دارای گواهی کیفیت و استاندارد هستند</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔄</div>
+        <h3>بازگشت ۷ روزه</h3>
+        <p>در صورت عدم رضایت تا ۷ روز می‌توانید محصول را برگردانید</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>پشتیبانی ۲۴/۷</h3>
+        <p>تیم متخصص ما همیشه آماده پاسخگویی به سوالات شماست</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">نظرات مشتریان</span>
+      <h2>اون‌ها به ما اعتماد کردند</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>«کیفیت غذای سگم از پاو پت خیلی بهتر از برندهای دیگه بود. ماکسی عاشقشه!»</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">س</div>
+          <div><strong>سارا محمدی</strong><span>صاحب گلدن رتریور</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card featured-testimonial">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>«بستر گربه‌ام از اینجا خریدم، کیفیت فوق‌العاده‌ست. ارسال هم خیلی سریع بود.»</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ع</div>
+          <div><strong>علی کریمی</strong><span>صاحب گربه ایرانی</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>«پشتیبانیشون عالیه. وقتی سوال داشتم، خیلی سریع و کامل راهنمایی کردن.»</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ن</div>
+          <div><strong>نیلوفر احمدی</strong><span>صاحب طوطی آفریقایی</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🐾</span>
+          <span class="logo-text">پاو <em>پت</em></span>
+        </a>
+        <p>پاو پت با بیش از ۱۰ سال تجربه در زمینه فروش محصولات حیوانات خانگی، بهترین انتخاب برای دوستان پشمالوی شماست.</p>
+        <div class="social-links">
+          <a href="#" aria-label="اینستاگرام">📸</a>
+          <a href="#" aria-label="تلگرام">✈️</a>
+          <a href="#" aria-label="واتساپ">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="products.html">محصولات</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+          <li><a href="cart.html">سبد خرید</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>دسته‌بندی‌ها</h4>
+        <ul>
+          <li><a href="products.html?cat=dog">محصولات سگ</a></li>
+          <li><a href="products.html?cat=cat">محصولات گربه</a></li>
+          <li><a href="products.html?cat=bird">محصولات پرنده</a></li>
+          <li><a href="products.html?cat=fish">محصولات ماهی</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>اطلاعات تماس</h4>
+        <ul>
+          <li>
+            <span class="contact-icon">📍</span>
+            <span>ایران ، کرج</span>
+          </li>
+          <li>
+            <span class="contact-icon">📱</span>
+            <span><a href="tel:09121234567">09024180789</a></span>
+          </li>
+          <li>
+            <span class="contact-icon">✉️</span>
+            <span><a href="mailto:info@pawpet.ir">eslampour.pm.1387@gmail.com</a></span>
+          </li>
+          <li>
+            <span class="contact-icon">🕐</span>
+            <span>شنبه تا پنج‌شنبه: ۹ تا ۲۱</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 1405 پاو پت — تمامی حقوق محفوظ است</p>
+      <div class="footer-badges">
+        <span class="badge">نماد اعتماد</span>
+        <span class="badge">درگاه امن</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

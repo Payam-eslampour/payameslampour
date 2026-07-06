@@ -1,0 +1,50 @@
+/* ===== Theme Toggle Button ===== */
+#theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: color 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;   /* push to left in RTL nav */
+  flex-shrink: 0;
+}
+#theme-toggle-btn:hover {
+  color: #ffbf00;
+  background: rgba(255, 191, 0, 0.1);
+}
+
+/* Light theme overrides for navbar bg */
+[data-theme="light"] .navbar {
+  background-color: var(--navbar-bg, #e0e0e088);
+}
+[data-theme="light"] .navbar a {
+  color: var(--text-secondary);
+}
+[data-theme="light"] .navbar a.active {
+  color: var(--text-primary);
+}
+[data-theme="light"] .job-badge {
+  background: #ddd;
+  color: #333;
+}
+[data-theme="light"] .service-card {
+  background: #f5f5f5;
+}
+[data-theme="light"] .skill-bar {
+  background: #ddd;
+}
+
+/* Make navbar nav flex so theme button aligns to the left */
+.navbar nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0;
+}
